@@ -1,0 +1,81 @@
+import java.util.Scanner;
+class node
+{
+	 int data;
+	 node next;
+
+	
+}
+
+class myDynamicstack
+{
+	
+	public  node top=null;
+	public  void push()
+	{
+		Scanner sc=new Scanner(System.in);
+		node p=new node();
+		System.out.println("ENTER THE DATA OF THE NODE");
+		p.data=sc.nextInt();
+		p.next=top;
+		top=p;
+		
+		
+		
+		
+	}
+	public void pop()
+	{
+		if(top==null)
+		{
+			System.out.println("STACK OVERFLOW");
+			
+		}
+		else
+		{
+			node p=top;
+			top=top.next;
+			System.out.println("deleted="+p.data);
+		}
+		
+		
+	}
+	public void display()
+	{
+		if(top==null)
+		{
+			System.out.println("empty stack");
+		}
+		else
+		{
+			
+			node curr=top;
+			
+			while(curr!=null)
+			{
+				System.out.println(curr.data);
+				curr=curr.next;
+			}
+		}
+		
+	}
+}
+public class DYNAMIC_STACK {
+
+	public static void main(String[] args) 
+	{
+		myDynamicstack sc=new myDynamicstack();
+		sc.push();
+		sc.push();
+		sc.push();
+		sc.push();
+		sc.pop();
+		sc.push();
+		sc.display();
+		
+		
+
+
+	}
+
+}
